@@ -1,8 +1,10 @@
-A = open('27_a-ff2754b8-04f8-4c75-a9d7-19034cdd4191.txt').readlines()[1:]
+A = open('27_a-ff2754b8-04f8-4c75-a9d7-19034cdd4191.txt').readlines()[1:] # с первого индекса, тк в нулевом "X Y"
 B = open('27_b-8a18111c-7542-497f-85eb-426fae5cd4b9.txt').readlines()[1:]
-clusterA = [[], []]
-clusterB = [[], [], []]
-for i in A:
+
+clusterA = [[], []] # первый и второй кластер
+clusterB = [[], [], []] # три кластера
+for i in A: # перебор по координатам
+
     x, y = [float(k) for k in i.replace(',', '.').split()]
     if y > 0:
         clusterA[0].append([x, y])
